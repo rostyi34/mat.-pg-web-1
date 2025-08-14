@@ -6,3 +6,5 @@ código em desenvolvimento.
 Quando uma nova funcionalidade precisa ser criada, é usada um ramificaçao feature dentro da develop, que após seu termino ira ser transferida
 para a develop. A branch release, e utilizada para os ultimos tester e ajuster para um novo lançamento, e erros urgentes 
 a branch hotfix. Eventualmente sao mesclados novamente a Main onde serão o código final é atualizado.
+
+O GitFlow traz mais controle, organização e segurança para o projeto, principalmente em equipes grandes. Apesar disso, pode ser um pouco complexo para projetos pequenos ou individuais.
