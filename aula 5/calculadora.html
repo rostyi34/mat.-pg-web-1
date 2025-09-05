@@ -17,9 +17,22 @@
         <option> value="/">÷</option>
 
     </select>
-    <input type="number" id="num2" placeholder="numero 2">
+    <input type="number" id="num2" placeholder="numero 23">
     
     <button onclick="calcular()">calcular</button>
     
 <div id="resultado"></div>
 </body>
+
+<script>
+        function calcular() {
+            const n1 = parsefloat(document.getElementById("num1").value);
+            const n2 = parsefloat(document.getElementByid("num2").value);
+            const operação = document.getElementById("operação").value;
+            const resultadoDiv = document.getElementById("resultado");
+
+            if (IsNam(n1) || IsNam(n2)) {
+                    
+            }
+        }
+</script>
