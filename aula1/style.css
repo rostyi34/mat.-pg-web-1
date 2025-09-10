@@ -1,13 +1,14 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
+    background-color: #fffdfd;
     margin: 0;
     padding: 20px;
 }
 
 form {
-    background-color: #ffffff;
+    background-color: #c9c9c9;
     padding: 20px;
+    height: 30px;
     border-radius: 10px;
     width: 300px;
     margin: auto;
