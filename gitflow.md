@@ -9,4 +9,4 @@ a branch hotfix. Eventualmente sao mesclados novamente a Main onde serão o cód
 
 O GitFlow traz mais controle, organização e segurança para o projeto, principalmente em equipes grandes. Apesar disso, pode ser um pouco complexo para projetos pequenos ou individuais.
 
-m
+ms
