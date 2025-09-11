@@ -30,39 +30,75 @@
     </tr>
     <tr>
       <td>João</td>
-      <td>10</td><td>8</td><td>9</td>
-      <td>6</td><td>8.7</td><td>10</td>
-      <td>6</td><td>7</td><td>9</td>
+      <td><input type="number" min="0" max="10" step="0.1" value="10"></td>
+      <td><input type="number" min="0" max="10" step="0.1" value="8"></td>
+      <td><input type="number" min="0" max="10" step="0.1" value="9"></td>
+      <td><input type="number" min="0" max="10" step="0.1" value="6"></td>
+      <td><input type="number" min="0" max="10" step="0.1" value="8.7"></td>
+      <td><input type="number" min="0" max="10" step="0.1" value="10"></td>
+      <td><input type="number" min="0" max="10" step="0.1" value="6"></td>
+      <td><input type="number" min="0" max="10" step="0.1" value="7"></td>
+      <td><input type="number" min="0" max="10" step="0.1" value="9"></td>
     </tr>
     <tr>
       <td>Maria</td>
-      <td>0</td><td></td><td></td>
-      <td></td><td></td><td></td>
-      <td></td><td></td><td></td>
+      <td><input type="number" min="0" max="10" step="0.1" value="0"></td>
+      <td><input type="number" min="0" max="10" step="0.1"></td>
+      <td><input type="number" min="0" max="10" step="0.1"></td>
+      <td><input type="number" min="0" max="10" step="0.1"></td>
+      <td><input type="number" min="0" max="10" step="0.1"></td>
+      <td><input type="number" min="0" max="10" step="0.1"></td>
+      <td><input type="number" min="0" max="10" step="0.1"></td>
+      <td><input type="number" min="0" max="10" step="0.1"></td>
+      <td><input type="number" min="0" max="10" step="0.1"></td>
     </tr>
     <tr>
       <td>José</td>
-      <td></td><td></td><td></td>
-      <td></td><td></td><td></td>
-      <td></td><td></td><td></td>
+      <td><input type="number" min="0" max="10" step="0.1"></td>
+      <td><input type="number" min="0" max="10" step="0.1"></td>
+      <td><input type="number" min="0" max="10" step="0.1"></td>
+      <td><input type="number" min="0" max="10" step="0.1"></td>
+      <td><input type="number" min="0" max="10" step="0.1"></td>
+      <td><input type="number" min="0" max="10" step="0.1"></td>
+      <td><input type="number" min="0" max="10" step="0.1"></td>
+      <td><input type="number" min="0" max="10" step="0.1"></td>
+      <td><input type="number" min="0" max="10" step="0.1"></td>
     </tr>
     <tr>
       <td>Paulo</td>
-      <td></td><td></td><td></td>
-      <td></td><td></td><td></td>
-      <td></td><td></td><td></td>
+      <td><input type="number" min="0" max="10" step="0.1"></td>
+      <td><input type="number" min="0" max="10" step="0.1"></td>
+      <td><input type="number" min="0" max="10" step="0.1"></td>
+      <td><input type="number" min="0" max="10" step="0.1"></td>
+      <td><input type="number" min="0" max="10" step="0.1"></td>
+      <td><input type="number" min="0" max="10" step="0.1"></td>
+      <td><input type="number" min="0" max="10" step="0.1"></td>
+      <td><input type="number" min="0" max="10" step="0.1"></td>
+      <td><input type="number" min="0" max="10" step="0.1"></td>
     </tr>
     <tr>
       <td>Miguel</td>
-      <td><input type="number" size="2"></td><td></td><td></td>
-      <td></td><td></td><td></td>
-      <td></td><td></td><td></td>
+      <td><input type="number" min="0" max="10" step="0.1"></td>
+      <td><input type="number" min="0" max="10" step="0.1"></td>
+      <td><input type="number" min="0" max="10" step="0.1"></td>
+      <td><input type="number" min="0" max="10" step="0.1"></td>
+      <td><input type="number" min="0" max="10" step="0.1"></td>
+      <td><input type="number" min="0" max="10" step="0.1"></td>
+      <td><input type="number" min="0" max="10" step="0.1"></td>
+      <td><input type="number" min="0" max="10" step="0.1"></td>
+      <td><input type="number" min="0" max="10" step="0.1"></td>
     </tr>
     <tr>
       <td>Julia</td>
-      <td></td><td></td><td></td>
-      <td></td><td></td><td></td>
-      <td></td><td></td><td></td>
+      <td><input type="number" min="0" max="10" step="0.1"></td>
+      <td><input type="number" min="0" max="10" step="0.1"></td>
+      <td><input type="number" min="0" max="10" step="0.1"></td>
+      <td><input type="number" min="0" max="10" step="0.1"></td>
+      <td><input type="number" min="0" max="10" step="0.1"></td>
+      <td><input type="number" min="0" max="10" step="0.1"></td>
+      <td><input type="number" min="0" max="10" step="0.1"></td>
+      <td><input type="number" min="0" max="10" step="0.1"></td>
+      <td><input type="number" min="0" max="10" step="0.1"></td>
     </tr>
   </table>
 
@@ -82,9 +118,9 @@
       for (let c = 1; c < colunas; c++) {
         let soma = 0, qtd = 0;
         for (let l = 2; l < linhas.length - 1; l++) {
-          let valor = linhas[l].cells[c].innerText || linhas[l].cells[c].querySelector("input")?.value;
-          if (valor) {
-            soma += parseFloat(valor);
+          let input = linhas[l].cells[c].querySelector("input");
+          if (input && input.value) {
+            soma += parseFloat(input.value);
             qtd++;
           }
         }
@@ -101,9 +137,9 @@
       for (let l = 2; l < linhas.length; l++) {
         let soma = 0, qtd = 0;
         for (let c = 1; c < linhas[l].cells.length; c++) {
-          let valor = linhas[l].cells[c].innerText || linhas[l].cells[c].querySelector("input")?.value;
-          if (valor) {
-            soma += parseFloat(valor);
+          let input = linhas[l].cells[c].querySelector("input");
+          if (input && input.value) {
+            soma += parseFloat(input.value);
             qtd++;
           }
         }
