@@ -1,105 +1,84 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Cadastro de Pessoa — Prática 2</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Pessoa</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <main class="container">
     <h1>Cadastro de Pessoa</h1>
 
-    <form id="cadastro" novalidate>
+    <form action="cadastro.php" method="POST">
       <fieldset>
         <legend>Dados Pessoais</legend>
-
-        <div class="row">
-          <label for="nome">Nome *</label>
-          <input id="nome" name="nome" type="text" maxlength="100" required />
-        </div>
-
-        <div class="row">
-          <label for="sobrenome">Sobrenome *</label>
-          <input id="sobrenome" name="sobrenome" type="text" maxlength="100" required />
-        </div>
-
-        <div class="row">
-          <label for="email">E-mail *</label>
-          <input id="email" name="email" type="email" required />
-        </div>
-
-        <div class="row">
-          <label for="data_nasc">Data de Nascimento *</label>
-          <input id="data_nasc" name="data_nasc" type="date"
-                 min="1920-01-01" max="2024-01-01" required />
-        </div>
-
-        <div class="row radio-row">
-          <span class="label-inline">Sexo *</span>
-          <label><input type="radio" name="sexo" value="M" required /> Masculino</label>
-          <label><input type="radio" name="sexo" value="F" /> Feminino</label>
-        </div>
+        <ul>
+          <li>
+            <label for="nome">Nome *</label>
+            <input type="text" id="nome" name="nome" maxlength="100" required>
+          </li>
+          <li>
+            <label for="sobrenome">Sobrenome *</label>
+            <input type="text" id="sobrenome" name="sobrenome" maxlength="100" required>
+          </li>
+          <li>
+            <label for="email">E-mail *</label>
+            <input type="email" id="email" name="email" required>
+          </li>
+          <li>
+            <label for="data_nasc">Data de Nascimento *</label>
+            <input type="date" id="data_nasc" name="data_nasc" min="1920-01-01" max="2024-01-01" required>
+          </li>
+          <li>
+            <span>Sexo *</span>
+            <label><input type="radio" name="sexo" value="M" required> Masculino</label>
+            <label><input type="radio" name="sexo" value="F"> Feminino</label>
+          </li>
+        </ul>
       </fieldset>
 
       <fieldset>
         <legend>Endereço</legend>
-
-        <div class="row">
-          <label for="endereco">Endereço</label>
-          <input id="endereco" name="endereco" type="text" maxlength="200" />
-        </div>
-
-        <div class="row">
-          <label for="cep">CEP</label>
-          <input id="cep" name="cep" type="text" maxlength="10"
-                 pattern="^\d{5}-?\d{3}$" placeholder="12345-678" />
-        </div>
-
-        <div class="row">
-          <label for="estado">Estado (UF)</label>
-          <select id="estado" name="estado">
-            <option value="">-- selecione --</option>
-            <option value="AC">AC</option><option value="AL">AL</option>
-            <option value="AP">AP</option><option value="AM">AM</option>
-            <option value="BA">BA</option><option value="CE">CE</option>
-            <option value="DF">DF</option><option value="ES">ES</option>
-            <option value="GO">GO</option><option value="MA">MA</option>
-            <option value="MT">MT</option><option value="MS">MS</option>
-            <option value="MG">MG</option><option value="PA">PA</option>
-            <option value="PB">PB</option><option value="PR">PR</option>
-            <option value="PE">PE</option><option value="PI">PI</option>
-            <option value="RJ">RJ</option><option value="RN">RN</option>
-            <option value="RS">RS</option><option value="RO">RO</option>
-            <option value="RR">RR</option><option value="SC">SC</option>
-            <option value="SP">SP</option><option value="SE">SE</option>
-            <option value="TO">TO</option>
-          </select>
-        </div>
-
-        <div class="row">
-          <label for="cor">Cor favorita</label>
-          <input id="cor" name="cor" type="color" />
-        </div>
+        <ul>
+          <li>
+            <label for="endereco">Endereço</label>
+            <input type="text" id="endereco" name="endereco" maxlength="200">
+          </li>
+          <li>
+            <label for="cep">CEP</label>
+            <input type="text" id="cep" name="cep" maxlength="10" pattern="^\d{5}-?\d{3}$" placeholder="12345-678">
+          </li>
+          <li>
+            <label for="estado">Estado (UF)</label>
+            <select id="estado" name="estado">
+              <option value="">-- selecione --</option>
+              <option value="SP">SP</option>
+              <option value="RJ">RJ</option>
+              <option value="MG">MG</option>
+              <option value="ES">ES</option>
+              <option value="PR">PR</option>
+              <option value="SC">SC</option>
+              <option value="RS">RS</option>
+              <option value="BA">BA</option>
+              <option value="PE">PE</option>
+              <option value="CE">CE</option>
+              <option value="AM">AM</option>
+              <option value="PA">PA</option>
+            </select>
+          </li>
+          <li>
+            <label for="cor">Cor favorita</label>
+            <input type="color" id="cor" name="cor">
+          </li>
+        </ul>
       </fieldset>
 
       <div class="actions">
-        <button type="submit">Enviar</button>
-        <button type="reset">Limpar</button>
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Limpar">
       </div>
     </form>
   </main>
-
-  <script>
-    document.getElementById('cadastro').addEventListener('submit', function (e) {
-      if (!this.checkValidity()) {
-        e.preventDefault();
-        this.reportValidity();
-      } else {
-        e.preventDefault();
-        alert('Formulário válido — pronto para envio (exemplo).');
-      }
-    });
-  </script>
 </body>
 </html>
