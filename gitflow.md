@@ -8,3 +8,5 @@ para a develop. A branch release, e utilizada para os ultimos tester e ajuster p
 a branch hotfix. Eventualmente sao mesclados novamente a Main onde serão o código final é atualizado.
 
 O GitFlow traz mais controle, organização e segurança para o projeto, principalmente em equipes grandes. Apesar disso, pode ser um pouco complexo para projetos pequenos ou individuais.
+
+m
