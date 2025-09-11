@@ -1,0 +1,36 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  width: 300px;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 15px;
+}
+
+input, select, button {
+  margin: 8px 0;
+  padding: 8px;
+  width: 90%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+#resultado {
+  font-weight: bold;
+  color: #000;
+  border: 2px solid #000;
+}
