@@ -13,7 +13,7 @@
 "request": "launch",
 "url":
 
-"http://localhost/php/${fileBasename}?XDEBUG_SESSION_START=XXXXXX",
+"http://localhost/php/${fileBasename}?XDEBUG_SESSION_START=VSCODE",
 
 "webRoot": "${workspaceFolder}"
 }
