@@ -21,3 +21,5 @@ file_put_contents($arquivo, json_encode($conteudo, JSON_PRETTY_PRINT));
 
 echo "Pessoa salva no arquivo com sucesso!";
 ?>
+
+S
