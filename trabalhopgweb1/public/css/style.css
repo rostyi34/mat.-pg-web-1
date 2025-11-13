@@ -1,0 +1,177 @@
+/* public/css/style.css */
+
+/* --- Estilo Base (Para centralizar o formulário) --- */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinha no topo, para não ficar no meio da tela */
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+}
+
+h1 {
+    color: #333;
+    font-size: 1.8em;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.anonimo {
+    font-size: 0.8em;
+    color: #777;
+    margin-top: 15px;
+}
+
+/* --- Estilo das Perguntas --- */
+.pergunta {
+    margin-bottom: 25px;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.pergunta .texto {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    color: #555;
+}
+
+/* --- Estilo da Escala de 0 a 10 (Similar à imagem) --- */
+.escala {
+    display: flex;
+    justify-content: space-between; /* Distribui os itens uniformemente */
+    gap: 2px;
+}
+
+.escala .radio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    flex-grow: 1; /* Faz com que todos os botões tenham a mesma largura */
+    text-align: center;
+    user-select: none;
+}
+
+.escala input[type="radio"] {
+    /* Esconde o radio button nativo */
+    display: none;
+}
+
+.escala .val {
+    /* O "quadrado" que exibe o número */
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 4px;
+    transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+}
+
+/* Define as cores da escala */
+.escala .radio:nth-child(1) .val { background-color: #E60000; } /* 0 - Vermelho Intenso */
+.escala .radio:nth-child(2) .val { background-color: #FF4500; } /* 1 - Laranja Avermelhado */
+.escala .radio:nth-child(3) .val { background-color: #FF6600; } /* 2 */
+.escala .radio:nth-child(4) .val { background-color: #FF8C00; } /* 3 */
+.escala .radio:nth-child(5) .val { background-color: #FFA500; } /* 4 - Laranja */
+.escala .radio:nth-child(6) .val { background-color: #FFD700; } /* 5 - Amarelo */
+.escala .radio:nth-child(7) .val { background-color: #ADFF2F; } /* 6 - Verde Amarelado */
+.escala .radio:nth-child(8) .val { background-color: #7FFF00; } /* 7 */
+.escala .radio:nth-child(9) .val { background-color: #3CB371; } /* 8 */
+.escala .radio:nth-child(10) .val { background-color: #008000; } /* 9 - Verde */
+.escala .radio:nth-child(11) .val { background-color: #006400; } /* 10 - Verde Escuro */
+
+/* Efeito Hover e Checked */
+.escala .radio:hover .val {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+
+.escala input[type="radio"]:checked + .val {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    transform: scale(1.1);
+    border: 2px solid #fff; /* Adiciona borda branca para destaque extra */
+}
+
+
+/* --- Estilo Feedback e Botão --- */
+.feedback {
+    margin-top: 20px;
+}
+
+.feedback label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.feedback textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+.acoes {
+    text-align: center;
+    margin-top: 25px;
+}
+
+#btnEnviar {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s;
+}
+
+#btnEnviar:hover {
+    background-color: #0056b3;
+}
+
+.introducao {
+    text-align: center;
+    padding: 50px;
+}
+
+.introducao p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    color: #666;
+}
+
+.botao-principal {
+    display: inline-block;
+    background-color: #28a745; /* Um verde chamativo */
+    color: white;
+    padding: 12px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.botao-principal:hover {
+    background-color: #1e7e34;
+}
