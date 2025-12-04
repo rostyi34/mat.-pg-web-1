@@ -1,0 +1,66 @@
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    padding-top: 40px;
+    padding-bottom: 50px;
+}
+
+h1 {
+    color: #343a40;
+    font-weight: 300;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #007bff;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    font-size: 1.75rem;
+}
+
+.card {
+    border-radius: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #212529;
+    margin-bottom: 10px;
+}
+
+.card-text strong {
+    color: #495057;
+}
+
+.card-body {
+    padding: 25px;
+}
+
+.bg-light {
+    background-color: #e9ecef !important;
+}
+
+/* Estilo para o card da família */
+.border-primary {
+    border-color: #007bff !important;
+}
+
+.text-muted {
+    font-style: italic;
+    font-size: 0.95rem;
+}
