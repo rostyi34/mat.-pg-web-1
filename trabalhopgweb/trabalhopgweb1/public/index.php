@@ -7,6 +7,9 @@ require_once __DIR__ . '/../src/perguntas.php';
 $perguntas = fetch_perguntas();
 ?>
 <!doctype html>
+
+<link rel="stylesheet" href="css/style.css">
+
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
