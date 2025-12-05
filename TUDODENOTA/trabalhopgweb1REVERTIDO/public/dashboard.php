@@ -8,13 +8,12 @@ if (!isset($_SESSION["admin_id"])) {
 
 $pdo = getPDO();
 
-// FILTRO
+
 $setor_id = ($_GET["setor"] ?? "todos");
 
-// LISTAR SETORES
 $setores = $pdo->query("SELECT * FROM setor ORDER BY nome")->fetchAll(PDO::FETCH_ASSOC);
 
-// LISTAR AVALIAÇÕES
+
 $sql = "
     SELECT a.*, p.texto AS pergunta, s.nome AS setor, d.nome AS dispositivo
     FROM avaliacao a
@@ -38,7 +37,7 @@ if ($setor_id !== "todos") {
 
 $avaliacoes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-// MÉDIA POR PERGUNTA
+
 $media_sql = "
     SELECT p.texto, AVG(a.resposta) AS media
     FROM avaliacao a
@@ -61,7 +60,7 @@ if ($setor_id !== "todos") {
 
 $medias = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-// MÉDIA POR SETOR
+
 $medias_setor = $pdo->query("
     SELECT s.nome, AVG(a.resposta) AS media, COUNT(*) AS total
     FROM avaliacao a

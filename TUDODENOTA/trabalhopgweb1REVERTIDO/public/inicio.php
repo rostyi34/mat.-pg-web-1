@@ -1,5 +1,5 @@
 <?php
-// public/inicio.php - Página de Introdução
+
 ?>
 <!doctype html>
 <html lang="pt-BR">

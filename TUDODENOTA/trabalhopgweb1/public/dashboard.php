@@ -1,20 +1,18 @@
 <?php
-// public/dashboard.php
+
 require_once "../src/db.php";
 require_once "../src/auth.php"; 
 proteger(); 
 
 $pdo = getPDO();
 
-// FILTRO
+
 $setor_id = ($_GET["setor"] ?? "todos");
 
-// LISTAR SETORES
+
 $setores = $pdo->query("SELECT * FROM setor ORDER BY nome")->fetchAll(PDO::FETCH_ASSOC);
 
-/* -------------------------------------------------------------
-   LISTAR AVALIAÇÕES - BUSCA AVALIACOES E FAZ JOINS
-   ------------------------------------------------------------- */
+
 $sql = "
     SELECT a.*, p.texto AS pergunta, s.nome AS setor, d.nome AS dispositivo
     FROM avaliacoes a  /* <--- CORRIGIDO: 'avaliacoes' */
@@ -38,9 +36,7 @@ if ($setor_id !== "todos") {
 
 $avaliacoes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-/* -------------------------------------------------------------
-   MÉDIA POR PERGUNTA
-   ------------------------------------------------------------- */
+
 $media_sql = "
     SELECT p.texto, AVG(a.resposta) AS media
     FROM avaliacoes a  /* <--- CORRIGIDO: 'avaliacoes' */

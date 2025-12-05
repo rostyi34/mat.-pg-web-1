@@ -1,5 +1,5 @@
 <?php
-// src/db.php
+
 require_once __DIR__ . '/../config.php';
 
 function getPDO(): PDO {

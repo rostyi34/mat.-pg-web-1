@@ -24,14 +24,14 @@ CREATE TABLE IF NOT EXISTS avaliacoes
     data_hora TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now()
 );
 
--- Tabela de administradores (parte 2)
+
 CREATE TABLE IF NOT EXISTS admins (
     id SERIAL PRIMARY KEY,
     usuario VARCHAR(100) NOT NULL UNIQUE,
     senha_hash VARCHAR(255) NOT NULL
 );
 
--- Inserções de exemplo
+
 INSERT INTO dispositivos (nome, status) VALUES ('Tablet Recepção', TRUE) ON CONFLICT DO NOTHING;
 INSERT INTO perguntas (texto, ordem, status) VALUES
     ('Como você avalia o atendimento?', 1, TRUE),

@@ -21,11 +21,7 @@ if ($count == 0) {
     $stmt->execute(["u" => "admin", "s" => $hash]);
 }
 
-/*
----------------------------------------------------------
-PROCESSAR LOGIN
----------------------------------------------------------
-*/
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $usuario = trim($_POST["usuario"]);

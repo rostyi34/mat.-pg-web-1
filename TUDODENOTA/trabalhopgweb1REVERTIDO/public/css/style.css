@@ -1,6 +1,4 @@
-/* public/css/style.css */
 
-/* --- Estilo Base (Para centralizar o formulário) --- */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f9;
@@ -8,7 +6,7 @@ body {
     padding: 20px;
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Alinha no topo, para não ficar no meio da tela */
+    align-items: flex-start; 
     min-height: 100vh;
 }
 
@@ -35,7 +33,7 @@ h1 {
     margin-top: 15px;
 }
 
-/* --- Estilo das Perguntas --- */
+
 .pergunta {
     margin-bottom: 25px;
     padding: 15px 0;
@@ -50,10 +48,10 @@ h1 {
     color: #555;
 }
 
-/* --- Estilo da Escala de 0 a 10 (Similar à imagem) --- */
+
 .escala {
     display: flex;
-    justify-content: space-between; /* Distribui os itens uniformemente */
+    justify-content: space-between; 
     gap: 2px;
 }
 
@@ -62,18 +60,18 @@ h1 {
     flex-direction: column;
     align-items: center;
     cursor: pointer;
-    flex-grow: 1; /* Faz com que todos os botões tenham a mesma largura */
+    flex-grow: 1; 
     text-align: center;
     user-select: none;
 }
 
 .escala input[type="radio"] {
-    /* Esconde o radio button nativo */
+    
     display: none;
 }
 
 .escala .val {
-    /* O "quadrado" que exibe o número */
+    
     display: block;
     width: 100%;
     padding: 10px 0;
@@ -96,7 +94,7 @@ h1 {
 .escala .radio:nth-child(10) .val { background-color: #008000; } /* 9 - Verde */
 .escala .radio:nth-child(11) .val { background-color: #006400; } /* 10 - Verde Escuro */
 
-/* Efeito Hover e Checked */
+
 .escala .radio:hover .val {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     transform: scale(1.05);
@@ -105,11 +103,11 @@ h1 {
 .escala input[type="radio"]:checked + .val {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
     transform: scale(1.1);
-    border: 2px solid #fff; /* Adiciona borda branca para destaque extra */
+    border: 2px solid #fff; 
 }
 
 
-/* --- Estilo Feedback e Botão --- */
+
 .feedback {
     margin-top: 20px;
 }
@@ -162,7 +160,7 @@ h1 {
 
 .botao-principal {
     display: inline-block;
-    background-color: #28a745; /* Um verde chamativo */
+    background-color: #28a745; 
     color: white;
     padding: 12px 25px;
     border-radius: 6px;

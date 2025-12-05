@@ -1,13 +1,13 @@
 <?php
-// public/feedbacks.php - Visualização Simples de Feedbacks (Sem Autenticação)
+
 require_once __DIR__ . '/../src/db.php';
 proteger();
 
 
 function fetch_feedbacks(): array {
     $pdo = getPDO();
-    // Busca todas as avaliações que possuem feedback preenchido
-    // e ordena por data/hora mais recente.
+    
+ 
     $stmt = $pdo->prepare("
         SELECT feedback, data_hora 
         FROM avaliacoes 
@@ -28,7 +28,7 @@ $feedbacks = fetch_feedbacks();
   <title>Visualização de Feedbacks</title>
   <link rel="stylesheet" href="css/style.css">
   <style>
-    /* Estilo específico para a tabela de feedbacks */
+  
     .feedback-table {
         width: 100%;
         border-collapse: collapse;

@@ -49,7 +49,7 @@ try {
     }
 
     $pdo->commit();
-    // Redirecionamento para a tela de obrigado após sucesso
+   
     header('Location: ../public/obrigado.php');
     exit;
 

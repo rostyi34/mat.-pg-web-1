@@ -1,5 +1,5 @@
 <?php
-// src/respostas.php
+
 require_once __DIR__ . '/db.php';
 require_once __DIR__ . '/funcoes.php';
 
@@ -14,7 +14,7 @@ $feedback = isset($_POST['feedback']) ? sanitize_text($_POST['feedback']) : null
 $dispositivo_id = isset($_POST['dispositivo_id']) ? (int)$_POST['dispositivo_id'] : null;
 
 if (!is_array($respostas) || empty($respostas)) {
-    // Resposta inválida
+    
     header('Location: ../public/index.php?error=1');
     exit;
 }
@@ -37,7 +37,7 @@ try {
             header('Location: ../public/index.php?error=2');
             exit;
         }
-        // Só gravar feedback na primeira avaliação (opcional) - ou gravar sempre (aqui gravamos somente se houver)
+       
         $fb_to_save = $feedback ?: null;
 
         $insert->execute([
@@ -50,13 +50,13 @@ try {
     }
 
     $pdo->commit();
-    // Após gravação, redirecionar para página de obrigado
+
     header('Location: ../public/obrigado.php');
     exit;
 
 } catch (Exception $e) {
     if ($pdo->inTransaction()) $pdo->rollBack();
-    // Não mostrar exceção em produção
+    
     header('Location: ../public/index.php?error=3');
     exit;
 }

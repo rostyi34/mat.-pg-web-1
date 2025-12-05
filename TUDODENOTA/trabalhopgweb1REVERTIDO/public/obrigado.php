@@ -1,5 +1,5 @@
 <?php
-// public/obrigado.php
+
 ?>
 <!doctype html>
 <html lang="pt-BR">

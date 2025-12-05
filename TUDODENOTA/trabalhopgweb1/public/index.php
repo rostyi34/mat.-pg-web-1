@@ -1,9 +1,8 @@
 <?php
-// public/index.php
+
 require_once __DIR__ . '/../src/perguntas.php';
 
-// Se quiser identificar o dispositivo (parte 2), troque por selector visível.
-// Aqui definimos dispositivo default (se existir), ou null.
+
 $perguntas = fetch_perguntas();
 ?>
 <!doctype html>
@@ -52,7 +51,7 @@ $perguntas = fetch_perguntas();
         <textarea name="feedback" id="feedback" rows="4" placeholder="Escreva seu comentário..."></textarea>
       </div>
 
-      <!-- dispositivo_id pode ser enviado (parte 2), aqui deixamos oculto (opcional) -->
+      
       <input type="hidden" name="dispositivo_id" value="1">
 
       <p class="anonimo">Sua avaliação é anônima — nenhuma informação pessoal é solicitada ou armazenada.</p>

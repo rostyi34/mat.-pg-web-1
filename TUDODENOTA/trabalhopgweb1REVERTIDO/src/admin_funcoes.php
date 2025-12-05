@@ -1,12 +1,7 @@
 <?php
 require_once "../src/db.php"; 
-$pdo = getPDO();   // CORRIGE TODOS OS ERROS
+$pdo = getPDO();   
 
-/* ============================================================
-   FUNÇÕES INTERNAS DO ADMIN (TUDO EM 1 ARQUIVO)
-   ============================================================ */
-
-/* ---------- PERGUNTAS ---------- */
 
 function listar_perguntas($pdo) {
     return $pdo->query("SELECT * FROM pergunta ORDER BY id")->fetchAll(PDO::FETCH_ASSOC);
@@ -34,7 +29,7 @@ function remover_pergunta($pdo, $id) {
 }
 
 
-/* ---------- SETORES ---------- */
+
 
 function listar_setores($pdo) {
     return $pdo->query("SELECT * FROM setor ORDER BY id")->fetchAll(PDO::FETCH_ASSOC);
@@ -67,44 +62,37 @@ function remover_dispositivo($pdo, $id) {
 }
 
 
-/* ============================================================
-   AÇÕES (POST/GET)
-   ============================================================ */
 
-// adicionar pergunta
 if (isset($_POST['add_pergunta'])) {
     adicionar_pergunta($pdo, $_POST['texto']);
 }
 
-// editar pergunta
+
 if (isset($_POST['edit_pergunta'])) {
     atualizar_pergunta($pdo, $_POST['id'], $_POST['texto']);
 }
 
-// remover pergunta
+
 if (isset($_GET['del_pergunta'])) {
     remover_pergunta($pdo, $_GET['del_pergunta']);
 }
 
-// adicionar setor
+
 if (isset($_POST['add_setor'])) {
     adicionar_setor($pdo, $_POST['nome']);
 }
 
-// adicionar dispositivo
+
 if (isset($_POST['add_dispositivo'])) {
     adicionar_dispositivo($pdo, $_POST['nome'], $_POST['setor_id']);
 }
 
-// remover dispositivo
+
 if (isset($_GET['del_dispositivo'])) {
     remover_dispositivo($pdo, $_GET['del_dispositivo']);
 }
 
 
-/* ============================================================
-   CARREGAR LISTAS
-   ============================================================ */
 
 $perguntas = listar_perguntas($pdo);
 $setores = listar_setores($pdo);
@@ -133,9 +121,7 @@ button { padding: 6px 14px; cursor: pointer; }
 
 <hr>
 
-<!-- ============================================================
-     PERGUNTAS
-     ============================================================ -->
+
 
 <h2>Cadastro de Perguntas</h2>
 
@@ -175,9 +161,7 @@ button { padding: 6px 14px; cursor: pointer; }
 
 <hr>
 
-<!-- ============================================================
-     SETORES
-     ============================================================ -->
+
 
 <h2>Cadastro de Setores</h2>
 
@@ -199,9 +183,7 @@ button { padding: 6px 14px; cursor: pointer; }
 
 <hr>
 
-<!-- ============================================================
-     DISPOSITIVOS
-     ============================================================ -->
+
 
 <h2>Cadastro de Dispositivos</h2>
 

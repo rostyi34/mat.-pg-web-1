@@ -1,12 +1,12 @@
 <?php
-// public/admin.php - Visualização Simples de Feedbacks
+
 require_once __DIR__ . '/../src/db.php';
-require_once __DIR__ . '/../src/auth.php'; // Adiciona o auth.php
-proteger(); // Aplica a proteção de acesso
+require_once __DIR__ . '/../src/auth.php'; 
+proteger(); 
 
 function fetch_feedbacks(): array {
     $pdo = getPDO();
-    // USANDO 'avaliacoes' (plural) - NOME CORRETO DO SEU BANCO
+    
     $stmt = $pdo->prepare("
         SELECT feedback, data_hora 
         FROM avaliacoes  
@@ -27,7 +27,7 @@ $feedbacks = fetch_feedbacks();
   <title>Visualização de Feedbacks</title>
   <link rel="stylesheet" href="css/style.css">
   <style>
-    /* Estilo específico para a tabela de feedbacks */
+    
     .feedback-table {
         width: 100%;
         border-collapse: collapse;

@@ -1,5 +1,5 @@
 <?php
-// src/perguntas.php
+
 require_once __DIR__ . '/db.php';
 
 function fetch_perguntas(): array {
