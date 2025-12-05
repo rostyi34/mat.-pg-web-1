@@ -1,5 +1,5 @@
 <?php
-// lab2.php - Recebe dados do cadastro.html, valida e insere no DB
+
 $conn = pg_connect("host=localhost dbname=aula11 user=postgres password=1234");
 ?>
 
@@ -8,30 +8,22 @@ $conn = pg_connect("host=localhost dbname=aula11 user=postgres password=1234");
 <head>
     <meta charset="UTF-8">
     <title>Resultado do Cadastro</title>
-    <style>
-        body { font-family: Arial, sans-serif; background-color: #f4f4f9; text-align: center; padding-top: 50px; }
-        .container { background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); max-width: 600px; margin: auto; }
-        .success { color: #008000; font-weight: bold; }
-        .error { color: #ff0000; font-weight: bold; }
-        .button { display: inline-block; padding: 10px 20px; margin: 10px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; transition: background-color 0.3s; }
-        .button:hover { background-color: #0056b3; }
-    </style>
-</head>
+    <link rel="stylesheet" href="style.css"> </head>
 <body>
     <div class="container">
         <?php
         $errors = [];
         $dados = [];
 
-        // 1. Sanitização e Validação (Exercício 4)
+      
         $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_STRING);
         $sobrenome = filter_input(INPUT_POST, 'sobrenome', FILTER_SANITIZE_STRING);
         $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
-        $senha = $_POST['senha'] ?? ''; // Senha não é sanitizada com filter_var, deve ser hashed
+        $senha = $_POST['senha'] ?? ''; 
         $cidade = filter_input(INPUT_POST, 'cidade', FILTER_SANITIZE_STRING);
         $estado = filter_input(INPUT_POST, 'estado', FILTER_SANITIZE_STRING);
         
-        // Exemplo de Validação: Nome e E-mail
+      
         if (empty($nome) || strlen($nome) < 2) {
             $errors[] = "O nome é obrigatório e precisa ter pelo menos 2 caracteres."; 
         }
@@ -41,16 +33,16 @@ $conn = pg_connect("host=localhost dbname=aula11 user=postgres password=1234");
         }
 
         if (empty($errors)) {
-            // 2. Hash da Senha (Boa prática de segurança)
+           
             $senha_hashed = password_hash($senha, PASSWORD_DEFAULT);
 
-            // 3. Preparar array de dados para pg_query_params()
+           
             $sql = "INSERT INTO TBPESSOA (PESNOME, PESSOBRENOME, PESEMAIL, PESPASSWORD, PESCIDADE, PESESTADO)
                     VALUES ($1, $2, $3, $4, $5, $6)";
             
             $params = array($nome, $sobrenome, $email, $senha_hashed, $cidade, $estado);
 
-            // 4. Executar a query
+            
             $result = pg_query_params($conn, $sql, $params);
 
             if ($result) {

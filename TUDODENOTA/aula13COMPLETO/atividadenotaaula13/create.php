@@ -1,5 +1,5 @@
 <?php
-// Inclui a classe Pessoa e define o namespace
+
 require "Pessoa.php";
 use Model\Pessoa;
 
@@ -7,17 +7,17 @@ $mensagem = "";
 $pessoaCriada = null;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // 1. Recebe e sanitiza os dados do formulário
+
     $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_STRING);
     $sobrenome = filter_input(INPUT_POST, 'sobrenome', FILTER_SANITIZE_STRING);
     $idade = filter_input(INPUT_POST, 'idade', FILTER_SANITIZE_NUMBER_INT);
     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
 
-    // 2. Instancia o objeto Pessoa (execução do construtor)
+   
     if ($nome && $sobrenome && $idade && $email) {
         $pessoaCriada = new Pessoa($nome, $sobrenome, (int)$idade, $email);
         
-        // 3. Opcional: Salvar em JSON para visualização de persistência
+       
         file_put_contents("ultima_pessoa_criada.json", $pessoaCriada->toJSON());
 
         $mensagem = "Objeto Pessoa ('{$pessoaCriada->nomeCompleto()}') criado com sucesso! Dados salvos em 'ultima_pessoa_criada.json'.";

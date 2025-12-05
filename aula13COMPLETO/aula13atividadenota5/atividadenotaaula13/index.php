@@ -1,32 +1,31 @@
 <?php
-// Inclui a classe Pessoa
+
 require "Pessoa.php";
 use Model\Pessoa;
 
-// --- Exe 1: Instância Pessoal ---
+
 $eu = new Pessoa("Gustavo", "Silva", 18, "gustavo@example.com");
 
-// --- Exe 2: Carregamento dos Dados da Família (Deserialização) ---
-// **CORREÇÃO APLICADA: Verifica se o arquivo existe E não está vazio antes de desserializar.**
+
 $familia_objetos = [];
 $filename_familia = "familia.txt";
 if (file_exists($filename_familia) && filesize($filename_familia) > 0) {
     $familia_serializada = file_get_contents($filename_familia);
-    // Usa @ para suprimir o Notice caso a desserialização falhe de forma incompleta
+    
     $temp_objects = @unserialize($familia_serializada); 
     if ($temp_objects !== false) {
         $familia_objetos = $temp_objects;
     }
 }
 
-// --- Exe 3: Carregamento dos Dados JSON ---
+
 $pessoa_json = null;
 if (file_exists("pessoa.json")) {
     $pessoa_json_conteudo = file_get_contents("pessoa.json");
     $pessoa_json = json_decode($pessoa_json_conteudo);
 }
 
-// Função auxiliar para renderizar a Pessoa em um card
+
 function renderPessoaCard(Pessoa $p, $header = "") {
     echo '<div class="card-body">';
     if (!empty($header)) {
